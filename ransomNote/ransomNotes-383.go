@@ -1,0 +1,74 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main(){
+	result:=false
+	
+	result = canConstruct("bbba", "baba")
+	fmt.Println("result of run:", result, "should be" , false)
+	fmt.Println("=====================================")
+	result = canConstruct("haeiaajhhj", "ahiehehf")
+	fmt.Println("result of run:", result, "should be" , false)
+	fmt.Println("=====================================")
+	result = canConstruct("aa", "aab")
+	fmt.Println("result of run:", result, "should be" , true)
+	fmt.Println("=====================================")
+	result = canConstruct("baba", "ababa")
+	fmt.Println("result of run:", result, "should be" , true)
+	fmt.Println("=====================================")
+	result = canConstruct("b", "baba")
+	fmt.Println("result of run:", result, "should be" , true)
+	fmt.Println("=====================================")
+	result = canConstruct("aab", "aab")
+	fmt.Println("result of run:", result, "should be" , true)
+	fmt.Println("=====================================")
+	
+	result = canConstruct("abcdefghijk", "kjihgfedcba")
+	fmt.Println("result of run:", result, "should be" , true)
+	
+	fmt.Println("=====================================")
+	result = canConstruct("ddghdcadhahaiacfiafjejbehffbjcjbidjeeabbcgadgfdaijgghjbfgbahgahhbeggjbgbedghjegjgdghdjchbehbbjaaabihabccegebchhdfggdciaejdjhieijfhhhhhcfgfdbhcdgbifhgdggbhfijifidfcabgeiahhfcbdgbgbaijhbdbiacbjiefejajdhfacbgdadbdhgdachfcgiiheagabfadcgegjhbabjfcigajdihdbchfifjgcaibdjjijhhgacecaedhiahacdbddeaeifaefhcfhddjdeejeiahcbfeehfcfjfcdeecffejijdjbecfeciciedacdhhihggdhhihhbggdfhbegifahhihjdibefbejadggggedjbechdjehigddbfhciacdbgefadbciciacghaaedgdadhebdiighejfehdgifgbdigfbhffhffahjjddecbajfdeficjibfiihbgfieagaeeadjheebdjdidgajaddgfdgagjaifedjeibgajgejaaajgagcejijieedaeiidbddhfhjjciejjbidgiegjcdghfdbgadeeeggaejdgdifiihhhfebccfgbihdfhhjjijejaebfeibgfgehfgabjjabhjichbhhfehcbiiibeeajbfjbjgagejhihdfgjbcjcgbfaficihdjdddefgcdcjhjdeigbgficbdajejjhbfgafcccbaidajeafghjjjdjbbgicagbcijbhfifigebhgbjfibdjegdeifbbbjchjgiaaaeebihhaeahdcfbjfedhcahicbgjafjaibfgeegchdjhhdbgiihejhhhhjbhejfeejedhcgbgcheeeagbfafdaffjgjjcihhabjbdjcecgeiiddcaieffbdgaehgb",
+							"cjhibcaghejbjcfgdbabbefdahedjjcdcegebcjihfcejcheafdeiafhagifhdeibgfifgfjeebgfbgiiejjbfejcajjgejejjffhaifgccadcifibhhhgfhiahcgedgaiihcefidebjcadihjaeaecgaidccehcgcdgdjcadbadbebhcjeccedabbjehibhjcjeijigjibbbhedffajjjdadagdeggicbihjfggbdabgjeicehfjaeiccbbjifdafjddiaijhcgibgcdjbhheafjcghfcegfcdgghdceggahghbaffgihffajijihedbfijebagiajadhhbadeihiichgehegceeadcejhaegdhghbaehieeefffhhjgbibhajieibaejcfgdegfedcdehccdhgcdfadaajiadhidfhgieccigadjbahjceigiicjcgfidhbgdbfjgadcagcicecebeigfbgiabcggihfighdibicaagcgehbjebcgffjbjbibihahiaifgbhjgggdhddibghicijecghijhehabbcffijgiahiehhffbccjefjhabdbcafadfehgcjbfighdfecdffahiaefhcaddfbbhijadhhjiaaaifjbcbaahgeefceebifgbihadbcigajejhjfdehigfiadjdcebaebcejgajbhjdbbaiiahgghdijccgijaeajdifdigdejiiahgicgiaeecifbgcfgeigfdgfhfejaeggacjehahjebaffcbgdehhahfecddbgabghffiacdcehgebfaiejfbeddbgfagfchhahjjfahdhidiaiacdhjhjcgbdcgdjebgdedeegjidjagjecjgighjgccgghbajfgabgbbaejjaejicjeejbjijgebfgacfefhiadjahbbfbcchagdijabbecifebhdgjedeggghdddedfjgbgaefefhbbiciedhhhbfbbbfjfbjdgeaffffgihjiihdijhcabecdceecdjabbggfhdiceheadgfaeeiggaiachahbdgfhgdaehcaccbfjhdchidiiedfdaciifcdiieagdjgibbfceehggddbaidagegajiihagabjffhgehfcdgcijhfafahjidaiadidihbdigcheifhbdiibdffbfdjfihbbfeehbhcjjfjciajhjghigecgfgjcchifcdhahdfijfaeegggcfjjiedhajbidehbagafheefdcefjbghjdebgiejdcbacfdedjedeghdbcfgbfcdfccbeahhabcgcfehhabjhacefhegjbjiaiahfajccigbhichgbfgieabcdcgagghhfhaceeiadiiidifcadhiaehhadfgehbbbfgjcicicgcfceedcdjedajhehgfacdacaiheijchagfjcehabhadccaaijececejhigfiehjjbdchehaeecbcieghjeahjjgefbjfidchibhggijefibjabajjacdbhbbchdjegiagicjgjfgeggjdbcjejefhcejgjccfefdgejebiccgceiacgijjhheehcifificbdeecjajggigjdjiebjcjaijaicbjcgagjbbaehdhddcfhedcdjfdecdbehjbgfhahgadggdgheeichhghcfchdidfgfebeegdahegaejehadaabeacccacghdghhjieghgaegdahjaebiecjigdhdaffciaehejjdhhaeejjieacgbbjdibjibcichfefhbaeeghbidhhbhfegciheggaeaidefjbichgbjfjacbbgiicbiajhbjhhefcicagecebhhbidcjiagdheddccbahjabicgjcdbjdbfgbchfdihieidbahaebaifbcifhihiheggggbffhdjjagjbfejadddbhdiehegaacebbedbcfjigjbdccccfaiieejaeijdjeedabgjfighgegdddjfbhidafibaecfhighhfgfdaddhfdiagecehchicihafjbebjhadbdcghcjjaaeaihidgadhfceejabgbhehbgbfccbhdfibfeebeeacdeijibgddjgbgfeigaebadjhajbeidjdihjihhebdheiejejjejadeihcbcdccdiejbeceegeeidfaggjdbjdhfifidcddaffjdacahdcjhdcfcabehabdficggehadefajhfiahhejghidceighhcdeggdegciifhjdeegcjdheddbjadcjccibafeafaeibecchiabifchjjdjchifaaahdbeiaigfdgjcchijjefhbcbficjidchhjihhfiefbbejddfgdgbabgchagebjcjcbdeaehfhdhhhghhgagdiabjfibigejgedejeghbbjhdbadiifgcfhadbghajbbdbjfgbfgabhdiiefjaaacfighejfbjggigifdadgfdfbfhaideddajabfabggbejggbciifeiighhcdaagigeajjajbegdabbcfechjfjggahahaabhhihfeeaahhagafdfiecdjgbbheagecdaedcghgiiaefeehdbehfjgagbccaaaedafihgfcjfdeggbcafjbfbidgghigjbfahajhjbhejcigaechafhediihciajdjibcgafjaaccibgbjbbcicjjifehehedgagggeachbbfhcegacehbhhaabhcbfffggfjidijjdadjgjhcfdbchiahjjadjjechcdeafghaiabbcfddhadabfecbddefhdgjjbgdhcdfdhijegbcadhjbbbfaggbejggifaeegcdaaegejchdgibaijibiegdahcgcbgdjajdiegjabgcaabicddadcbieggajehggigcdjahcfadiddjddjdibadafhgcchfhjhbechhhjgadcghdgcfhbebjcbchhchgaacdgbdibijhcbfabegijiabbgehehecffgcjiahafcaaabfdibfgageijibhhgdhafcacbadcbjfeehhfjhhdaeajefcbjigeecbhcgjdeefgbdgbcjbheibfcdgdhhgjaadhjdbdhbjcegfbddbcccjiehiiigehheieedgjecihhhgifbaggceafbcacgfdjabcbbhjgcbifiaghfgcbdbfhaihfhabbifdbbcahhidjbhaciiejgfibjjhbjcgadeehjecbjjjdcjhghjaejjcccjhfbfhiidebadcefabcgjdacijbgifdfdbjfhcabiggcedeidjghciibgiibeibdbdadjicagccgjdeijbbiifcgcbdifeeehehejiehhfhefbbhcghchjcddjghihdcbdjjgfgjehdgbddcbhagchehhjbajjfejefcfhajaachdejdabicjcabjbbdhjigedbfdaehcebhgjjedfaeheafeahijediebacfdadfeajeghehhcacfgffhbfcjidcafbfhbjdeeheghjffbgcihcggifdfhceegiedfgdgedgefhfcgeaadabjafgcddjbcjihjifjgadgfhdjdebffbabfdgaeehcdchjiffeaegcbjgiiijaeedhbfdgdfecbhibccgdajegiiachggeehjgegcbccbdbeehfidjaeiheiccefbdhhifagdhaggbdcddejfhbdebgdfigciciefaijhfjiccaajaghbdeebcfiaaheeciejjegdcdeddeiffhhhdhegjdbahababbafdbbjceaiccaafcddcfaafacjjbhbiiigdaicicbhhideihbdfgidahceghfgfhahbhaibebefabehcdabicfgddfcibjjcbbicbejjcfjagacfeeffcaacfbgchfhdhcfjgebjdgjgiaiabbfhegijjagciijgghgcjdgdiiffiiejifhbdaaaafhcjdajjgaceaadhgeebieeddgbiiabihghiigbhchbiabhdeefjfdichjejjdchficggiicjabhcghbfjdgdjbbcgbajafiihfcifdejeidacjcfjieddgfgiaeabahghhjdehjchihhchjehgiiiefccffbaeeagjhibgfjghcdgajgahjeejfjcihfjhhccejdaggcihhhdedhcfhhgbfgffhabahcjfhbcdgdfghfaaecefcjbbccidecgcahcidjefiidcdibbbfffccjahefjbcebaaicicdhhgceihjbgfhijjbchhhfgeijedcfaddfeijifaccfbhdciieahdchdfideejfdjjfdadhcbfedfceccighbceedgjidcchggeajiibibidgffhbahbfjhaiacbhcdcgagjhbccagcjdahdcejdabiebbdebdebdhgeeifdgjghajbdieiafebjefgbibicahdehgibgcggegbaiaijbjeejbjcggjcihgbbiifhjibbdhaacgeaefjabjaggciahiaicbeeahaifeffcjfcebdejgceehhghcgjfbjifgcgcecibbbfcddideidceeegdifjgjjaafhccjbfcijcegghcegeceaicjjcjdhjihifabjihbeeibiecjbihgiffbhaabjcjgedcfeigheeajiihjhcgaihibjddaggcccidcdfdhbgehigdjhffjagbfebhfajggaijjbbbgjhgfdbeafgcjchdgfbibegagiiehieedddbighdhgjghadaibbfbbagjhidhibefehdgfaafahddjeciicfcfeceidjbigigdjgccadjeibechahghhbffabfafgehijeccacffedgbhicbdhgjggdbcjjjeiajdhaadeiiidbbgdbhgbdbeihefjgdbgjjbbbbiejaafdjafggjifbeaefibgdebaicjcdbhfefgeghhfjcafcfbcciiefahbhdibahicdciacfacagddjghehadeidfeifhjccghjgbceddghchcfcgefcgfifajbfgaghbiecbigddfcdjaaahchddhddbjjfbfiihjbbigifeciacjfddfibdifhiejejecgbjejagbjiieafhcijfjgfajifibebjbcechhbifcgjggaadhfbfccbhfcbdhhcigffcfdgecjjebbcfdbjbdfjfddjbagdbgceedgehghgeddhgddgigeegdeebcgdabdgjaajbiiihbddgcdeffbafijigbieejifjhjgedbigafbjfhhebdaabggbafbhfjjdghfcgaehfabeddbbfdedafaiffcfggdcfhjhgfdebfcadjichhedibcfbjicfhaebegdaijjdddfdddcdeggjjeccibhfcafibcddgbcceejgfhiddiijacijjjfjhgchidcagbccahbihagdicfgeaedijgcbcbcjeehghacghjbjhecgceahcchhbcjddahhfhdfeicjgfiiiidijeegccidgheijehjdcdgieeidaejfhggdbfcegiheccaadhhchejaddhecheagacifehbdadcbfjcdbchedhdfgfcdfefgdfbefihjcceihgcdbbiebehedgfebeiebaihfegcejiggiabagfbfjihefjhbeghegjbjhijdcaaeaeiieeffbaeadcecffieagieajhcceeicbcgadfcebchcbgjbiegaegbcdggcjebghbjehggdbbehcgbbgeecbhbbaeeijbeeeicdefjbiffeagjababhgajehiabjhjgejgacfighhageagebciefffceaabfcfajiadcjccahbgabhijihfdcgfdgjfggdidejieefadbcaffcjgbgjbgdfhcjicccgebhiijdjaagfcccjicehfhdhcjfcbjjebfhicdfadieiaafdadadbedgegecibjhcbebhebeibafeabdceacgdifbgeajajihadjjgebbabfaaheabahiefdeidjfadiigdjahgbaihjdecdibfgicfibfaigagfdbfgbgbfghgfbgiagbbjajfgjghedhbfchgggeeahffdeedaaejhhgdaaifbechdjiicffaegabaefagejejfdebjgfbdabcggaiajdeaaibfebgghdciihjfafiagejjhgjfgddbibhjijcffbhaijdjghgdffeffgdejdjbhehcbeajceighbegdhfjiedcehjbcdfhdbjchaebbbbabcgejbeeceaeiicffeghijhajdiggcjfddaceiajfhbfcggefbeefcgehbahdbbgcgeaheigjdafdigijfceiahhhbgbafdhcafjfiaabjdfhifbhbcafjgeacggijgajcgdaggbbiceiaghjfbahacaeibbigjbbdhjdedhjfbgdijiaccabjaaaechcjgceibbdhajifbgafagegdccjaegeaacaeidedajagbcibafegdjibghaddcabbcbaibehafjigbeecfacgheihjdiehdigjjaeafjiagaiibegaagjfdjhjbjhfgfdcihjcghegiaiiidaegjbiejdchibefdbcdjdffbdhbfcdbaiiaifcgbedaaghfjaabhgghhbcaiahgeaahfffadiagcidgbfbbeadfjghafjgjihjdfbbahfdibfgeaeceibaijgcgbgcfebddhejhgaaibcgiiicagjbhhdcbejccefecbjhafcgdhjbjgjciahcgdgbghfhhgejdaejafddjgjhebjachhachdjedcjcgeahbciggehbijjehgiecegbhfddihgeifhdchhbdhbgihchhegfhhjacejefgbeegjgdfaifcafabafccdefgfjbdiedagjcgaedidaajidjbdhafeadbcdbgiabcbacbachggcccdcijbjjdhahfbdgbdjdajahecbehggihgbjhdaabieahiaihagfbagcbdgjagjdihbedahjjfehdddicdggjjggcdeifhiefajicajchbjgihgffiejhahhbiihbgabgfibehjjjbjeciabeebgfdidegbbffaegbbbfjfdhibhjfhdagjgadgjjhjbhgjbbdfejhgahdgadgacjejidegefdbhjjegbdhfifchibdaebhgbcaehahdaehibihdidafibihghhbihbccabfhggihibfdehcejigbccfeeeehgfhcgdejgehbdggeigdcicajfffbhdhcgdbihjfeggggdhhgfdcfjfbjiijbcabfagfieg")
+	fmt.Println("result of run:", result, "should be" , true)
+	
+}
+
+func canConstruct(ransomNote string, magazine string) bool {
+
+	//pre fail: when magazine is lessor than ransomNote len
+	if len(ransomNote) > len(magazine) { return false }
+
+	//sort the two strings, if magazine is a substring of ransomNote then return true.
+	var a[]byte = []byte(ransomNote)
+	var b[]byte = []byte(magazine)
+	i:=len(a)-1
+	for i>=0{
+		j:=len(b)-1
+		//fmt.Println(a,b,i,j)
+		for j>=0{
+			//fmt.Println("in 1, [i,j]:", i,j)
+			if b[j] == a[i] { 
+				//fmt.Println("---> match found [i,j]:", i,j)
+				//found a match, remove one char from each slice.
+				if j+1 < len(b) { b[j] = b[len(b)-1] }
+				b = b[:len(b)-1]
+				if i+1 < len(a){ a[i] = a[len(a)-1] }
+				a = a[:len(a)-1]
+				if i==0 { break }
+				if j==0 { break }
+				break
+			}
+			j--
+		}
+		i--
+	}
+	if len(a)==0 { 
+		return true
+	}else{
+		return false
+	}
+}
+
